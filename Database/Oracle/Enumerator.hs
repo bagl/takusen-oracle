@@ -776,8 +776,6 @@ withBinaryValue fn v pok action =
   pok p (fn v)
   action (castPtr p)
 
-clength = fromIntegral . length
-
 toCInt :: Int -> CInt; toCInt = fromIntegral
 fromCInt :: CInt -> Int; fromCInt = fromIntegral
 toCChar :: Char -> CChar; toCChar = toEnum . fromEnum
