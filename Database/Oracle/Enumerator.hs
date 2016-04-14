@@ -711,7 +711,7 @@ class OracleBind a where
 
 instance OracleBind a => OracleBind (Maybe a) where
   bindWithValue (Just v) a = bindWithValue v a
-  bindWithValue Nothing a = return ()
+  bindWithValue Nothing a = a nullPtr
   bindWriteBuffer b (Just v) = bindWriteBuffer b v
   bindWriteBuffer b Nothing = return ()
   bindDataSize (Just v) = bindDataSize v
